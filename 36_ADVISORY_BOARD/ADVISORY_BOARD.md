@@ -1,25 +1,13 @@
-# Advisory Board — ALLENNLP
+# Advisory Board - ALLENNLP_PRIOR_DOCS
 
 **Company:** Anticloud FZ LLE
-**Model:** PAX L5 Narrow L2 General 27B
-**Project:** ALLENNLP | Category: ACADEMIA_RD
-**Upstream:** https://github.com/allenai/allennlp (Apache 2.0)
+**Project:** ALLENNLP_PRIOR_DOCS | Category: ACADEMIA_RD
 
-## Overview
+## Status
 
-This document covers advisory board for the Anticloud integration of ALLENNLP.
-
-NLP research library for academic experiments
-
-## Anticloud Integration
-
-PAX L5 Narrow L2 General 27B is integrated into ALLENNLP to provide:
-- Local AI inference with zero cloud dependency
-- AIOSS tamper-evident audit chain
-- AES-256 encryption at rest
-- Single-binary deployment
+No advisors are appointed to this project at this time. Advisory appointments, when made, will be recorded here with names, roles, and start dates.
 
 ## Contact
 
-Lois-Kleinner Alpasan — CEO & CTO, Anticloud FZ LLE
+Lois-Kleinner Alpasan - CEO & CTO, Anticloud FZ LLE
 lois@0-1.gg | 0-1.gg
