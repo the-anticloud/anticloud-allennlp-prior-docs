@@ -1,0 +1,590 @@
+{
+  "schema": "anticloud.tier-bench/1",
+  "project": "ALLENNLP_PRIOR_DOCS",
+  "source": {
+    "repo_path": "UPSTREAM_CLONE",
+    "git": {
+      "head": "80fb6061e568cb9d6ab5d45b661e86eb61b92c82",
+      "url": "https://github.com/allenai/allennlp",
+      "branch": "main",
+      "committed_at": "2022-11-21T19:42:46-05:00"
+    }
+  },
+  "metrics": {
+    "files_total": 495,
+    "source_files_scanned": 354,
+    "lines_of_code": 58483,
+    "languages": {
+      ".py": 352,
+      ".txt": 24,
+      ".gz": 18,
+      ".json": 16,
+      "(none)": 14,
+      ".md": 9,
+      ".th": 7,
+      ".yml": 5,
+      ".jsonnet": 5,
+      ".zip": 5,
+      ".jsonl": 5,
+      ".hdf5": 5,
+      ".sh": 4,
+      ".tsv": 4,
+      ".in": 2
+    }
+  },
+  "licence": {
+    "spdx": "Apache-2.0",
+    "class": "A",
+    "source_file": "LICENSE",
+    "redistribution_allowed": true
+  },
+  "dependencies": {
+    "count": 1,
+    "unique": 1,
+    "by_ecosystem": {
+      "pypi": 1
+    },
+    "list": [
+      {
+        "ecosystem": "pypi",
+        "name": "allennlp",
+        "version": "=allennlp.__main__:run",
+        "source_file": "setup.py",
+        "raw": "allennlp=allennlp.__main__:run"
+      }
+    ]
+  },
+  "owasp_top10": {
+    "total_findings": 54,
+    "files_with_findings": 50,
+    "severity": {
+      "high": 18,
+      "medium": 1,
+      "low": 35
+    },
+    "categories": {
+      "A01-BrokenAccessControl": {
+        "count": 0,
+        "findings": []
+      },
+      "A02-CryptographicFailures": {
+        "count": 0,
+        "findings": []
+      },
+      "A03-Injection": {
+        "count": 19,
+        "findings": [
+          {
+            "severity": "high",
+            "file": "setup.py",
+            "line": 69,
+            "cwe": "CWE-95",
+            "snippet": "exec(version_file.read(), VERSION)"
+          },
+          {
+            "severity": "high",
+            "file": "allennlp/commands/evaluate.py",
+            "line": 251,
+            "cwe": "CWE-95",
+            "snippet": "model.eval()"
+          },
+          {
+            "severity": "high",
+            "file": "allennlp/common/testing/model_test_case.py",
+            "line": 196,
+            "cwe": "CWE-95",
+            "snippet": "model.eval()"
+          },
+          {
+            "severity": "medium",
+            "file": "allennlp/data/vocabulary.py",
+            "line": 663,
+            "cwe": "CWE-89",
+            "snippet": "\"Common namespace {} has conflicting \".format(namespace)\r\n                    + \"setting of padded = True/False. \""
+          },
+          {
+            "severity": "high",
+            "file": "allennlp/evaluation/evaluator.py",
+            "line": 160,
+            "cwe": "CWE-95",
+            "snippet": "model.eval()"
+          },
+          {
+            "severity": "high",
+            "file": "allennlp/fairness/adversarial_bias_mitigator.py",
+            "line": 115,
+            "cwe": "CWE-95",
+            "snippet": "# eval() are called"
+          },
+          {
+            "severity": "high",
+            "file": "allennlp/fairness/bias_mitigator_applicator.py",
+            "line": 60,
+            "cwe": "CWE-95",
+            "snippet": "# when train() and eval() are called"
+          },
+          {
+            "severity": "high",
+            "file": "allennlp/interpret/influence_interpreters/influence_interpreter.py",
+            "line": 336,
+            "cwe": "CWE-95",
+            "snippet": "self.model.eval()"
+          },
+          {
+            "severity": "high",
+            "file": "allennlp/modules/seq2vec_encoders/cnn_encoder.py",
+            "line": 25,
+            "cwe": "CWE-120",
+            "snippet": "the output after maxpooling is `len(ngram_filter_sizes) * num_filters`.  This then gets\r\n    (optionally) projected down to a lower dimensional output, specified by `output_dim`."
+          },
+          {
+            "severity": "high",
+            "file": "allennlp/modules/token_embedders/pretrained_transformer_embedder.py",
+            "line": 160,
+            "cwe": "CWE-95",
+            "snippet": "self.transformer_model.eval()"
+          },
+          {
+            "severity": "high",
+            "file": "allennlp/predictors/predictor.py",
+            "line": 33,
+            "cwe": "CWE-95",
+            "snippet": "model.eval()"
+          },
+          {
+            "severity": "high",
+            "file": "allennlp/tools/EVALB/evalb.c",
+            "line": 386,
+            "cwe": "CWE-120",
+            "snippet": "strcpy(buff1,buff);"
+          },
+          {
+            "severity": "high",
+            "file": "allennlp/training/gradient_descent_trainer.py",
+            "line": 641,
+            "cwe": "CWE-95",
+            "snippet": "self._pytorch_model.eval()"
+          },
+          {
+            "severity": "high",
+            "file": "allennlp/training/util.py",
+            "line": 339,
+            "cwe": "CWE-95",
+            "snippet": "model.eval()"
+          },
+          {
+            "severity": "high",
+            "file": "allennlp/training/metrics/evalb_bracketing_scorer.py",
+            "line": 193,
+            "cwe": "CWE-78",
+            "snippet": "os.system(\"cd {} && make && cd ../../../\".format(evalb_directory_path))"
+          },
+          {
+            "severity": "high",
+            "file": "scripts/build_docs_config.py",
+            "line": 49,
+            "cwe": "CWE-502",
+            "snippet": "source_yaml = yaml.load(Path(opts.source_yaml))"
+          },
+          {
+            "severity": "high",
+            "file": "scripts/get_version.py",
+            "line": 18,
+            "cwe": "CWE-95",
+            "snippet": "exec(version_file.read(), VERSION)"
+          },
+          {
+            "severity": "high",
+            "file": "scripts/release_notes.py",
+            "line": 48,
+            "cwe": "CWE-78",
+            "snippet": "stream = os.popen("
+          },
+          {
+            "severity": "high",
+            "file": "scripts/ai2_internal/run_with_beaker.py",
+            "line": 51,
+            "cwe": "CWE-78",
+            "snippet": "result = subprocess.run(\"git diff-index --quiet HEAD --\", shell=True)"
+          }
+        ]
+      },
+      "A04-InsecureDesign": {
+        "count": 30,
+        "findings": [
+          {
+            "severity": "low",
+            "file": "allennlp/commands/evaluate.py",
+            "line": 269,
+            "cwe": "CWE-",
+            "snippet": "# TODO(gabeorlanski): Is it safe to always default to .outputs and .preds?"
+          },
+          {
+            "severity": "low",
+            "file": "allennlp/common/checks.py",
+            "line": 100,
+            "cwe": "CWE-",
+            "snippet": "# TODO(brendanr): Determine why mypy can't tell that this matches the Union."
+          },
+          {
+            "severity": "low",
+            "file": "allennlp/common/from_params.py",
+            "line": 238,
+            "cwe": "CWE-",
+            "snippet": "# register pytorch modules directly).  This is a bit of a hack to make those work,"
+          },
+          {
+            "severity": "low",
+            "file": "allennlp/common/push_to_hf.py",
+            "line": 25,
+            "cwe": "CWE-",
+            "snippet": "# TODO: Fill this model card"
+          },
+          {
+            "severity": "low",
+            "file": "allennlp/common/tqdm.py",
+            "line": 26,
+            "cwe": "CWE-",
+            "snippet": "# TODO(Mark): Remove this once tqdm cleans up after itself properly."
+          },
+          {
+            "severity": "low",
+            "file": "allennlp/common/testing/model_test_case.py",
+            "line": 61,
+            "cwe": "CWE-",
+            "snippet": "# TODO(joelgrus) get rid of these"
+          },
+          {
+            "severity": "low",
+            "file": "allennlp/data/tokenizers/character_tokenizer.py",
+            "line": 48,
+            "cwe": "CWE-",
+            "snippet": "# TODO(brendanr): Add length truncation."
+          },
+          {
+            "severity": "low",
+            "file": "allennlp/data/tokenizers/spacy_tokenizer.py",
+            "line": 145,
+            "cwe": "CWE-",
+            "snippet": "# hack to replace tokenizer with a whitespace tokenizer"
+          },
+          {
+            "severity": "low",
+            "file": "allennlp/data/token_indexers/elmo_indexer.py",
+            "line": 133,
+            "cwe": "CWE-",
+            "snippet": "# TODO(brendanr): Retain the token to index mappings in the vocabulary and remove this"
+          },
+          {
+            "severity": "low",
+            "file": "allennlp/data/token_indexers/pretrained_transformer_indexer.py",
+            "line": 150,
+            "cwe": "CWE-",
+            "snippet": "# TODO(zhaofengw): we aren't respecting word boundaries when segmenting wordpieces."
+          },
+          {
+            "severity": "low",
+            "file": "allennlp/evaluation/evaluator.py",
+            "line": 206,
+            "cwe": "CWE-",
+            "snippet": "# TODO(gabeorlanski): Add in postprocessing the batch for token"
+          },
+          {
+            "severity": "low",
+            "file": "allennlp/fairness/bias_mitigator_applicator.py",
+            "line": 69,
+            "cwe": "CWE-",
+            "snippet": "# TODO: adapt BiasMitigatorWrapper to changes in Model"
+          },
+          {
+            "severity": "low",
+            "file": "allennlp/fairness/bias_mitigator_wrappers.py",
+            "line": 36,
+            "cwe": "CWE-",
+            "snippet": "# TODO: remove equalize words from evaluation words"
+          },
+          {
+            "severity": "low",
+            "file": "allennlp/interpret/attackers/hotflip.py",
+            "line": 120,
+            "cwe": "CWE-",
+            "snippet": "# A bit of a hack; this will only work with some dataset readers, but it'll do for now."
+          },
+          {
+            "severity": "low",
+            "file": "allennlp/interpret/attackers/utils.py",
+            "line": 25,
+            "cwe": "CWE-",
+            "snippet": "# TODO(mattg): this really should live on the Predictor.  We have some messy stuff for, e.g.,"
+          },
+          {
+            "severity": "low",
+            "file": "allennlp/interpret/influence_interpreters/simple_influence.py",
+            "line": 129,
+            "cwe": "CWE-",
+            "snippet": "# TODO (epwalsh): should we divide `x.grads` by `self._scale`?"
+          },
+          {
+            "severity": "low",
+            "file": "allennlp/interpret/saliency_interpreters/smooth_gradient.py",
+            "line": 38,
+            "cwe": "CWE-",
+            "snippet": "# TODO (@Eric-Wallace), SmoothGrad is not using times input normalization."
+          },
+          {
+            "severity": "low",
+            "file": "allennlp/models/model.py",
+            "line": 224,
+            "cwe": "CWE-",
+            "snippet": "# NOTE(markn): This is a hack because 0-dim pytorch tensors are not iterable."
+          },
+          {
+            "severity": "low",
+            "file": "allennlp/modules/encoder_base.py",
+            "line": 45,
+            "cwe": "CWE-",
+            "snippet": "before being passed as input. As all of our Seq2xxxEncoders use this functionality,"
+          },
+          {
+            "severity": "low",
+            "file": "allennlp/modules/sampled_softmax_loss.py",
+            "line": 89,
+            "cwe": "CWE-",
+            "snippet": "# TODO(joelgrus): implement tie_embeddings (maybe)"
+          },
+          {
+            "severity": "low",
+            "file": "allennlp/modules/softmax_loss.py",
+            "line": 17,
+            "cwe": "CWE-",
+            "snippet": "# TODO(joelgrus): implement tie_embeddings (maybe)"
+          },
+          {
+            "severity": "low",
+            "file": "allennlp/modules/seq2vec_encoders/pytorch_seq2vec_wrapper.py",
+            "line": 24,
+            "cwe": "CWE-",
+            "snippet": "concatenate the forward and backward final states together. TODO(mattg): allow for other ways"
+          },
+          {
+            "severity": "low",
+            "file": "allennlp/modules/token_embedders/embedding.py",
+            "line": 152,
+            "cwe": "CWE-",
+            "snippet": "# TODO: having to pass tokens here is SUPER gross, but otherwise this breaks the"
+          },
+          {
+            "severity": "low",
+            "file": "allennlp/modules/transformer/attention_module.py",
+            "line": 168,
+            "cwe": "CWE-",
+            "snippet": "# TODO: clarify logic in terms of is_decoder and is_cross_attention"
+          },
+          {
+            "severity": "low",
+            "file": "allennlp/modules/transformer/positional_encoding.py",
+            "line": 48,
+            "cwe": "CWE-",
+            "snippet": "# TODO: Another option is to specify the expected size in init, so that we can construct"
+          }
+        ]
+      },
+      "A05-SecurityMisconfiguration": {
+        "count": 0,
+        "findings": []
+      },
+      "A06-VulnerableComponents": {
+        "count": 0,
+        "findings": []
+      },
+      "A07-AuthFailures": {
+        "count": 0,
+        "findings": []
+      },
+      "A08-SoftwareDataIntegrity": {
+        "count": 5,
+        "findings": [
+          {
+            "severity": "low",
+            "file": "allennlp/modules/conditional_random_field/conditional_random_field.py",
+            "line": 164,
+            "cwe": "CWE-319",
+            "snippet": "See, e.g. http://www.cs.columbia.edu/~mcollins/fb.pdf"
+          },
+          {
+            "severity": "low",
+            "file": "allennlp/modules/conditional_random_field/conditional_random_field_wemission.py",
+            "line": 19,
+            "cwe": "CWE-319",
+            "snippet": "See, e.g. http://www.cs.columbia.edu/~mcollins/fb.pdf"
+          },
+          {
+            "severity": "low",
+            "file": "allennlp/modules/conditional_random_field/conditional_random_field_wlannoy.py",
+            "line": 19,
+            "cwe": "CWE-319",
+            "snippet": "See, e.g. http://www.cs.columbia.edu/~mcollins/fb.pdf"
+          },
+          {
+            "severity": "low",
+            "file": "allennlp/modules/conditional_random_field/conditional_random_field_wtrans.py",
+            "line": 19,
+            "cwe": "CWE-319",
+            "snippet": "See, e.g. http://www.cs.columbia.edu/~mcollins/fb.pdf"
+          },
+          {
+            "severity": "low",
+            "file": "allennlp/tools/inspect_cache.py",
+            "line": 24,
+            "cwe": "CWE-",
+            "snippet": "print(\"ETag: %s\" % etag)"
+          }
+        ]
+      },
+      "A09-LoggingMonitoringFailures": {
+        "count": 0,
+        "findings": []
+      },
+      "A10-SSRF": {
+        "count": 0,
+        "findings": []
+      }
+    }
+  },
+  "owasp_llm_top10": {
+    "total_findings": 5,
+    "files_with_findings": 5,
+    "severity": {
+      "high": 0,
+      "medium": 4,
+      "low": 1
+    },
+    "categories": {
+      "LLM01-PromptInjection": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM02-SensitiveInfoDisclosure": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM03-SupplyChain": {
+        "count": 3,
+        "findings": [
+          {
+            "severity": "medium",
+            "file": "allennlp/common/cached_transformers.py",
+            "line": 87,
+            "cwe": "CWE-494",
+            "snippet": "AutoConfig.from_pretrained("
+          },
+          {
+            "severity": "medium",
+            "file": "allennlp/modules/seq2vec_encoders/bert_pooler.py",
+            "line": 26,
+            "cwe": "CWE-494",
+            "snippet": "we will call `transformers.AutoModel.from_pretrained(pretrained_model)`"
+          },
+          {
+            "severity": "medium",
+            "file": "allennlp/modules/transformer/transformer_module.py",
+            "line": 216,
+            "cwe": "CWE-494",
+            "snippet": "Optional key-word arguments to pass to `transformers.AutoConfig.from_pretrained()`"
+          }
+        ]
+      },
+      "LLM04-DataPoisoning": {
+        "count": 1,
+        "findings": [
+          {
+            "severity": "medium",
+            "file": "allennlp/commands/evaluate.py",
+            "line": 265,
+            "cwe": "CWE-20",
+            "snippet": "evaluation_data_path_list = json.loads(f\"[{input_file}]\")"
+          }
+        ]
+      },
+      "LLM05-ImproperOutputHandling": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM06-ExcessiveAgency": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM07-SystemPromptLeak": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM08-VectorEmbeddingWeaknesses": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM09-Misinformation": {
+        "count": 1,
+        "findings": [
+          {
+            "severity": "low",
+            "file": "allennlp/common/testing/model_test_case.py",
+            "line": 69,
+            "cwe": "CWE-",
+            "snippet": "assert verification.check(inputs=self.dataset.as_tensor_dict())"
+          }
+        ]
+      },
+      "LLM10-UnboundedConsumption": {
+        "count": 0,
+        "findings": []
+      }
+    }
+  },
+  "sbom": {
+    "bomFormat": "CycloneDX",
+    "specVersion": "1.5",
+    "serialNumber": "urn:uuid:038e9fd5-2952-5d73-af6a-4890b4fa8ec8",
+    "version": 1,
+    "metadata": {
+      "timestamp": "2026-10-05T19:03:30Z",
+      "component": {
+        "type": "application",
+        "name": "ALLENNLP_PRIOR_DOCS",
+        "version": "80fb6061e568",
+        "bom-ref": "pkg:generic/anticloud/ALLENNLP_PRIOR_DOCS@80fb6061e568",
+        "purl": "pkg:generic/anticloud/ALLENNLP_PRIOR_DOCS@80fb6061e568",
+        "licenses": [
+          {
+            "license": {
+              "id": "Apache-2.0"
+            }
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "anticloud:source-commit",
+          "value": "80fb6061e568cb9d6ab5d45b661e86eb61b92c82"
+        },
+        {
+          "name": "anticloud:source-url",
+          "value": "https://github.com/allenai/allennlp"
+        },
+        {
+          "name": "anticloud:tier",
+          "value": "tier-agent"
+        }
+      ]
+    },
+    "components": [
+      {
+        "type": "library",
+        "name": "allennlp",
+        "version": "=allennlp.__main__:run",
+        "purl": "pkg:pypi/allennlp@allennlp.__main__:run",
+        "bom-ref": "pypi/allennlp@=allennlp.__main__:run"
+      }
+    ]
+  },
+  "elapsed_seconds": 2065.3
+}

@@ -1,0 +1,46 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.5",
+  "serialNumber": "urn:uuid:038e9fd5-2952-5d73-af6a-4890b4fa8ec8",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-10-05T19:03:30Z",
+    "component": {
+      "type": "application",
+      "name": "ALLENNLP_PRIOR_DOCS",
+      "version": "80fb6061e568",
+      "bom-ref": "pkg:generic/anticloud/ALLENNLP_PRIOR_DOCS@80fb6061e568",
+      "purl": "pkg:generic/anticloud/ALLENNLP_PRIOR_DOCS@80fb6061e568",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ]
+    },
+    "properties": [
+      {
+        "name": "anticloud:source-commit",
+        "value": "80fb6061e568cb9d6ab5d45b661e86eb61b92c82"
+      },
+      {
+        "name": "anticloud:source-url",
+        "value": "https://github.com/allenai/allennlp"
+      },
+      {
+        "name": "anticloud:tier",
+        "value": "tier-agent"
+      }
+    ]
+  },
+  "components": [
+    {
+      "type": "library",
+      "name": "allennlp",
+      "version": "=allennlp.__main__:run",
+      "purl": "pkg:pypi/allennlp@allennlp.__main__:run",
+      "bom-ref": "pypi/allennlp@=allennlp.__main__:run"
+    }
+  ]
+}
